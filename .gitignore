@@ -1,0 +1,12 @@
+/.gitconfig
+/.idea
+**/*.iml
+**/target/*
+**/.DS_Store
+/manual/public/
+.llvm
+
+# Eclipse
+.settings
+.classpath
+.project

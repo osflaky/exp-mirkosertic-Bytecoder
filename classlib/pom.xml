@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.mirkosertic.bytecoder</groupId>
+        <artifactId>bytecoder-parent</artifactId>
+        <version>0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>bytecoder-classlib</artifactId>
+    <packaging>pom</packaging>
+    <name>Bytecoder Classlib</name>
+    <description>Bytecoder Classlib</description>
+
+    <modules>
+        <module>bytecoder.api</module>
+        <module>java.base</module>
+        <module>java.datatransfer</module>
+        <module>java.xml</module>
+        <module>java.desktop</module>
+        <module>java.logging</module>
+        <module>bytecoder.opencl</module>
+        <module>bytecoder.web</module>
+        <module>bytecoder.vue</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>e.mirkosertic.bytecoder</groupId>
+                <artifactId>bytecoder.api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>e.mirkosertic.bytecoder</groupId>
+                <artifactId>java.base</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>e.mirkosertic.bytecoder</groupId>
+                <artifactId>java.datatransfer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>e.mirkosertic.bytecoder</groupId>
+                <artifactId>java.desktop</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>e.mirkosertic.bytecoder</groupId>
+                <artifactId>bytecoder.opencl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>e.mirkosertic.bytecoder</groupId>
+                <artifactId>bytecoder.web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>e.mirkosertic.bytecoder</groupId>
+                <artifactId>bytecoder.vue</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

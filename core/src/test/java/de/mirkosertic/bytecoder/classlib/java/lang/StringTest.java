@@ -1,0 +1,103 @@
+/*
+ * Copyright 2017 Mirko Sertic
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package de.mirkosertic.bytecoder.classlib.java.lang;
+
+import de.mirkosertic.bytecoder.core.test.UnitTestRunner;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+@RunWith(UnitTestRunner.class)
+public class StringTest {
+
+    @Test
+    public void testString() {
+        final String lala = "Mirko";
+        final byte[] theData = lala.getBytes();
+        assertEquals(5, theData.length, 0);
+    }
+
+    @Test
+    public void testEquals1() {
+        assertTrue("123".equals("123"));
+    }
+
+    @Test
+    public void testEquals() {
+        assertTrue("123".equals(new String("123")));
+        assertFalse("123".equals(new String("321")));
+        assertFalse("123".equals(null));
+        assertFalse("123".equals(10L));
+    }
+
+    @Test
+    public void testMatches(){
+        assertTrue("123".matches("\\d+"));
+        assertTrue("123".matches("\\d*"));
+        assertTrue("very nice words".matches("very nice .+"));
+        assertTrue("false".matches("false"));
+        assertFalse("true".matches("false"));
+        assertFalse("true".matches("rue"));
+        assertFalse("true".matches("t"));
+        assertFalse("true".matches("e"));
+        assertFalse("not all matched".matches("."));
+        assertFalse("not all matched".matches(".{1,3}"));
+        assertFalse("not all matched".matches("matched"));
+        assertFalse("not all matched".matches("not"));
+        assertFalse("not all matched".matches("all"));
+    }
+
+    @Test
+    public void testEqualsIgnoreCase() {
+        assertTrue("A123".equalsIgnoreCase(new String("a123")));
+        assertTrue("abcdefghijklmnopqrstuvwxyz".equalsIgnoreCase(new String("ABCDEFGHIJKLMNOPQRSTUVWXYZ")));
+        assertTrue("a123".equalsIgnoreCase(new String("A123")));
+        assertFalse("123".equalsIgnoreCase(new String("321")));
+        assertFalse("123".equalsIgnoreCase(null));
+    }
+
+    @Test
+    public void testLength() {
+        assertEquals(10, "0123456789".length(), 0);
+    }
+
+    @Test
+    public void testArrayCreate() {
+        final char[] data = new char[10];
+        data[0] = '1';
+        data[1] = '2';
+        final String theString = new String(data, 0, 2);
+        assertEquals("12", theString.trim());
+    }
+
+    @Test
+    public void testToLowerCaseToUppercase() {
+        final String string = "A;b;c";
+        Assert.assertEquals("A;B;C", string.toUpperCase());
+        Assert.assertEquals("a;b;c", string.toLowerCase());
+    }
+
+    @Ignore
+    @Test
+    public void testFormat() {
+        final String result = String.format("%s %d", "Hallo", 42);
+    }
+}

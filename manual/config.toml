@@ -1,0 +1,19 @@
+baseURL = "https://mirkosertic.github.io/Bytecoder"
+languageCode = "en"
+title = "Bytecoder - JVM to JavaScript, OpenCL and WebAssembly Transpiler"
+theme = "hugo-theme-learn"
+defaultContentLanguage = "en"
+googleAnalytics = "UA-33614060-5"
+[params]
+author = "Mirko Sertic"
+editURL = "https://github.com/mirkosertic/Bytecoder/tree/master/manual/content/"
+landingPageURL = "https://mirkosertic.github.io/Bytecoder"
+landingPageName = "<i class='fas fa-home'></i> Home"
+bytecoderversion = "2023-05-19"
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+[[menu.shortcuts]]
+name = "<i class='fab fa-github'></i> Github repo"
+identifier = "ds"
+url = "https://github.com/mirkosertic/Bytecoder"
+weight = 10
